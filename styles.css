@@ -282,6 +282,7 @@ input:focus {
 }
 
 #card-name, #card-number {
+    box-shadow: .05px .05px 5px hsla(270, 3%, 87%, 0.676);
     font-size: 18px;
     height: 2.3em;
     width: 100%;
@@ -298,12 +299,14 @@ input:focus {
 }
 
 #card-month, #card-year {
+    box-shadow: .05px .05px 5px hsla(270, 3%, 87%, 0.676);
     font-size: 18px;
     height: 2.3em;
     width: 3.7em;
 }
 
 .card-cvc input {
+    box-shadow: .05px .05px 5px hsla(270, 3%, 87%, 0.676);
     font-size: 18px;
     height: 2.3em;
     width: 11em;
@@ -312,6 +315,7 @@ input:focus {
 #submit {
     border: 0;
     border-radius: 7px;
+    box-shadow: 1px 4px 8px hsla(278, 68%, 11%, 0.417);
     background-color: var(--clr-very-dark-violet);
     color: var(--clr-white);
     width: 100%;
@@ -344,6 +348,7 @@ input:focus {
 #continue {
     border: 0 ;
     border-radius: 7px;
+    box-shadow: 1px 4px 8px hsla(278, 68%, 11%, 0.417);
     background-color: var(--clr-very-dark-violet);
     color: var(--clr-white);
     width: 100%;
