@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+:root {
+    /* PRIMARY COLORS */
+    --clr-active-light: hsl(249, 99%, 64%);
+    --clr-active-dark: hsl(278, 94%, 30%);
+    --clr-error: hsl(0, 100%, 66%);
+
+    /* NEUTRAL COLORS */
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-light-grayish-violet: hsl(270, 3%, 87%);
+    --clr-dark-grayish-violet: hsl(279, 6%, 55%);
+    --clr-very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+    background: url('./images/bg-main-desktop.png') no-repeat;
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.error {
+    border: 1px solid var(--clr-error);
+}
+
+.error_message {
+    gap: 0;
+    height: 100px;
+}
+
+.error_message::after {
+    content: "can't be blank";
+    color: var(--clr-error);
+    margin-top: .2rem;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 575px) {
+    body {
+        background: url('./images/bg-main-mobile.png') no-repeat;
+        background-size: 33em 18em;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .error {
+        border: 1px solid var(--clr-error);
+    }
+    
+    .error_message {
+        gap: 0;
+        height: 90px;
+    }
+    
+    .error_message::after {
+        content: "can't be blank";
+        color: var(--clr-error);
+        font-size: 13px;
+    }
+
+    .card-front, .card-front img {
+        width: 360px;
+        position: relative;
+        top: 5%;
+        right: 8%;
+        font-weight: 100;
+        z-index: 1;
+    }
+
+    .card-front-info img {
+        width: 60px;
+    }
+
+    #number {
+        font-size: 22px;
+        font-weight: 500;
+        margin-top: 35px;
+        letter-spacing: 2px;
+        position: relative;
+        right: 8%;
+        z-index: 1;
+    }
+
+    .card-back {
+        transform: translate(7%,-190%);
+    }
+
+    .card-info{
+        width: 310px;
+        position: relative;
+        top: 10%;
+        right: 8%;
+        z-index: 1;
+    }
+
+    div #name {
+        font-size: 15px;
+        margin-top: 5px;
+        letter-spacing: 2px;
+    }
+    
+    div .date{
+        font-size: 15px;
+        margin-top: 5px;
+        letter-spacing: 2px;
+    }
+
+    .card-back img {
+        position: relative;
+        width: 360px;
+    }
+
+    .card-back > .back-text {
+        top: 33%;
+        left: 64%;
+        font-size: 14px;
+    }
+
+
+    /* FORM SECTION */
+    .card-det {
+        position: relative;
+        top: 55%;
+        right: 56%;
+        width: 420px;
+    }
+
+    .exp-input {
+        background-color: aqua;
+        font-size: 18px;
+        height: 2.3em;
+        width: 3.7em;
+    }
+
+    #card-cvc {
+        width: 100%;
+    }
+
+    #submit {
+        position: relative;
+        top: 11em;
+        right: 56%;
+    }
+
+
+    /* COMPLETED */
+    .thank-you img {
+        position: relative;
+        top: 200%;
+        right: 55%;
+    }
+
+    #thank-you-header {
+        position: relative;
+        top: 330%;
+        right: 55%;
+        font-size: 32px;
+    }
+
+    .thank-you p {
+        position: relative;
+        top: 670%;
+        right: 55%;
+        font-size: 20px;
+    }
+
+    #continue {
+        position: relative;
+        top: 270%;
+        right: 55%;
+        width: 450px;
+    }
+}
+
+.card-front, .card-front-info {
+    color: var(--clr-white);
+    width: 447px;
+    padding: 25px;
+    position: absolute;
+    top: 13%;
+    left: 6%;
+    z-index: 1;
+}
+
+.card-back {
+    color: var(--clr-white);
+    width: 447px;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+}
+
+.card-img {
+    border-radius: 10px;
+    box-shadow: 2px 2px 90px rgba(0, 0, 0, 0.344);
+}
+
+h3 {
+    font-size: 28px;
+    margin: 45px 0 15px 0;
+    letter-spacing: 4px;
+}
+
+#name{
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 3px;
+    letter-spacing: 2px;
+    float: left;
+}
+
+.date{
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 3px;
+    margin-right: 10px;
+    letter-spacing: 2px;
+    float: right;
+}
+
+.back-text {
+    position: absolute;
+    top: 35%;
+    left: 80%;
+    font-size: 16px;
+    margin-top: 22px;
+    letter-spacing: 2px;
+}
+
+.right-section {
+    display: grid;
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    transform: translate(-50%-50%);
+    width: 350px;
+}
+
+.card-det {
+    padding-bottom: 15px;
+}
+
+label {
+    color: var(--clr-very-dark-violet);
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+
+input {
+    border: 1px solid var(--clr-light-grayish-violet);
+    border-radius: 7px;
+    padding: 12px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus {
+    border-color: var(--clr-active-dark);
+    font-weight: 500;
+}
+
+.right-section input::placeholder {
+    color: var(--clr-light-grayish-violet);
+    font-weight: 300;
+    font-size: 18px;
+}
+
+#card-name, #card-number {
+    font-size: 18px;
+    height: 2.3em;
+    width: 100%;
+}
+
+.exp-cvc {
+    display: flex;
+    justify-content: space-between;
+}
+
+.exp-date {
+    margin-inline: .5rem;
+    margin-left: 0;
+}
+
+#card-month, #card-year {
+    font-size: 18px;
+    height: 2.3em;
+    width: 3.7em;
+}
+
+.card-cvc input {
+    font-size: 18px;
+    height: 2.3em;
+    width: 11em;
+}
+
+#submit {
+    border: 0;
+    border-radius: 7px;
+    background-color: var(--clr-very-dark-violet);
+    color: var(--clr-white);
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.thank-you {
+    display: grid;
+    justify-items: center;
+    position: absolute;
+    top: 30%;
+    left: 55%;
+    transform: translate(-50%-50%);
+    width: 350px;
+}
+
+#thank-you-header {
+    color: var(--clr-very-dark-violet);
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+}
+
+.thank-you p {
+    color: var(--clr-dark-grayish-violet);
+}
+
+#continue {
+    border: 0 ;
+    border-radius: 7px;
+    background-color: var(--clr-very-dark-violet);
+    color: var(--clr-white);
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    font-size: 18px;
+    cursor: pointer;
+}

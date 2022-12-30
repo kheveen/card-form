@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Interactive card details form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main>
+
+    <div class="card">
+      <div class="card-front">
+        <img src="./images/bg-card-front.png" alt="card-front" class="card-img">
+        <div class="card-front-info">
+          <img src="./images/card-logo.svg" alt="card-logo" class="logo">
+          <h3 id="number">0000 0000 0000 0000</h3>
+          <div class="card-info">
+            <span id="name">JANE APPLESEED</span>
+            <span class="date">
+              <span id="month">00</span>
+              /
+              <span id="year">00</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-back">
+        <img src="./images/bg-card-back.png" alt="card-back" class="card-img">
+        <h5 class="back-text" id="cvc">000</h5>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <form>
+        <div class="card-det">
+          <label for="name">CARDHOLDER NAME</label>
+          <br/>
+          <input 
+            type="text" 
+            id="card-name" 
+            name="card-name" 
+            placeholder="e.g. Jane Appleseed" 
+            required
+          >
+        </div>
+
+        <div class="card-det">
+          <label for="card-number">CARD NUMBER</label>
+          <br/>
+          <input number
+            type="number" 
+            id="card-number" 
+            maxlength="16" 
+            minlength="16"
+            oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            name="card-number" 
+            placeholder="e.g. 0000 0000 0000 0000" 
+            required
+          >
+        </div>
+
+        <div class="card-det">
+          <div class="exp-cvc">
+            <div class="exp-date">
+              <label for="exp-input">EXP. DATE (MM/YY)</label>
+              <br/>
+              <div id="exp-input">
+                <input 
+                  type="number" 
+                  id="card-month" 
+                  maxlength="2"
+                  minlength="2" 
+                  oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  name="card-month"
+                  placeholder="MM"
+                  required
+                >
+                <input 
+                  type="number" 
+                  id="card-year" 
+                  maxlength="2"
+                  minlength="2" 
+                  oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  name="card-year"
+                  placeholder="YY"
+                  required
+                >
+              </div>
+            </div>
+            
+            <div class="card-cvc">
+              <label for="cvc">CVC</label>
+              <br/>
+              <input 
+                type="number" 
+                id="card-cvc" 
+                maxlength="3"
+                minlength="3" 
+                name="cvc" 
+                oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                placeholder="e.g. 000" 
+                required
+              >
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" id="submit">Confirm</button>
+      </form>
+    </div>
+
+    <div class="thank-you hidden">
+      <img src="./images/icon-complete.svg" alt="approve">
+      <br>
+      <h2 id="thank-you-header">THANK YOU!</h2>
+      <p>We've added your card details</p>
+      <br>
+      <button id="continue">Continue</button>
+    </div>
+
+  </main>
+
+  <script src="./index.js"></script>
+
+
+</body>
+</html>
